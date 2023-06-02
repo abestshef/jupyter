@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Producing a suite of HTML files using Jupyter Book &#8212; Producing accessible mathematics notes using Jupyter</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced formatting using MyST Markdown" href="MyST.html" />
+    <link rel="prev" title="Producing an HTML file with Jupyter Notebook" href="Notebooks_HTML.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Producing accessible mathematics notes using Jupyter</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Intro.html">
+   Introduction to using Jupyter to write accessible mathematics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebooks.html">
+   Writing content in Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebooks_HTML.html">
+   Producing an HTML file with Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Producing a suite of HTML files using Jupyter Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MyST.html">
+   Advanced formatting using MyST Markdown
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Publishing.html">
+   Putting your content online
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Books.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FBooks.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Books.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-jupyter-book">
+   Installing Jupyter Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-template">
+   Creating a template
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-your-own-book">
+   Creating your own Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-pdf">
+   Creating a PDF
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Producing a suite of HTML files using Jupyter Book</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-jupyter-book">
+   Installing Jupyter Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-template">
+   Creating a template
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-your-own-book">
+   Creating your own Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-pdf">
+   Creating a PDF
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="producing-a-suite-of-html-files-using-jupyter-book">
+<h1>Producing a suite of HTML files using Jupyter Book<a class="headerlink" href="#producing-a-suite-of-html-files-using-jupyter-book" title="Permalink to this headline">¶</a></h1>
+<p>The webpages you can produce with Jupyter Notebook are fairly nice and clean and do everything basic you would want. However, if we are going to the trouble of producing HTML content, it would be nice if we can make use of that to its fullness and produce something that looks and works nicely as a website.</p>
+<p>The answer to this is Jupyter Book. This is a community-driven open-source project that is an extension to Jupyter Notebook. It is designed to take your Jupyter Notebook files (and it will also take other formats) and knit them together into a ‘proper’ website. It also uses a sort of extension to Markdown, called MyST Markdown (I don’t know much about this, other than it allows you to do some more fancy things as we will see on the next page), giving you even more options and control.</p>
+<p>I will talk through some of the processes of building a Jupyter Book website here, but <em>you should absolutely consult the actual project’s webpages</em> and its really pretty thorough tutorial pages as your guide (https://jupyterbook.org/en/stable/intro.html).</p>
+<div class="section" id="installing-jupyter-book">
+<h2>Installing Jupyter Book<a class="headerlink" href="#installing-jupyter-book" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter Book does not come as part of a standard package in, say Anaconda or the Jupyter Project, and has to be installed through the command line. Open a command window and type,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -U jupyter-book
+</pre></div>
+</div>
+<p>or you can use the Anaconda prompt, typing,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge jupyter-book
+</pre></div>
+</div>
+<p>This <em>should</em> install the package in a few minutes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The installation initially did not work on my laptop - I got multiple warnings about conflicts and then it would just hang for hours not doing anything. <em>I believe this to be a localised problem</em> in that after many years my Python distribution is quite messy, but I wanted to mention it in case anyone else has the same issue. The solution for me was to first enter a <em>virtual environment</em> (I didn’t really know what this was until I needed to use it, but it is simply one line of code in the command line) and then it installed fine. I then have to enter the virtual environment whenever I want to use Jupyter Book (but again, it’s just one line of code). Hopefully for those of you who look after your computers properly this will not be an issue.</p>
+</div>
+</div>
+<div class="section" id="creating-a-template">
+<h2>Creating a template<a class="headerlink" href="#creating-a-template" title="Permalink to this headline">¶</a></h2>
+<p>To my mind, the simplest way to create your own set of webpages is probably to create the default, template book and then move all of your material into it. To do this, in your command prompt navigate to the directory where you want the documents to go and then type,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter-book create mynewbook/
+</pre></div>
+</div>
+<p>This just takes a few seconds to run. If you now go to your normal file directory you will see this new folder called <em>mynewbook</em> has been created. If you look inside you will see a few files have been created. Most of these are example documents that have been created to form the basis of the book. Two important files are <em>_config</em> and <em>_toc</em>, and it is worth opening them in a text editor to see what’s inside them. The <em>_config</em> file contains a number of details used to build the book, including an overall title and any libraries that you may wish to include. The <em>_toc</em> file contains a list, in order, of the files that will be included in the book.</p>
+<p>The next stage is to build the book, in other words create the set of HTML pages. To do this go back to the command line and type,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter-book build mynewbook/
+</pre></div>
+</div>
+<p>After a few seconds this will say it is completed. If you look back in the <em>mynewbook</em> file directory you should see a new folder has been created called <em>_build</em>. Open this and then the <em>html</em> folder, and you will now see a set of HTML pages (and a few other bits and pieces that we won’t worry about). If you open the <em>index</em> HTML file in your chosen web browser you should see a fairly minimal website, not hugely different from these pages (since these were also made using Jupyter Book). Take a few moments to explore this short book. Key components to note are:</p>
+<ul class="simple">
+<li><p>The title, logo and table of contents down the left-hand side.</p></li>
+<li><p>The content itself in the main panel.</p></li>
+<li><p>The links forwards and back at the bottom of each page.</p></li>
+</ul>
+<p>This is a very minimal book, but hopefully you can already appreciate that many of the problems we found in creating a large multi-lecture webpage have been solved here, and it produces something that looks really quite smart.</p>
+<p>Now we can go ahead and use this to create our own book.</p>
+</div>
+<div class="section" id="creating-your-own-book">
+<h2>Creating your own Book<a class="headerlink" href="#creating-your-own-book" title="Permalink to this headline">¶</a></h2>
+<p>As a starting point, I will assume you have multiple Jupyter Notebook files all ready to go. We will go into some more details of how you can make these more fancy in the next page, but we’ll just work with whatever you have for now. To be completely clear, these do not need to have any hyperlinks buried into them - Jupyter Book will sort all that out for us - but are simply a set of self-contained files with all the content you want in them.</p>
+<p>In your regular file directory, drag all of your pre-prepared Notebook files across to the <em>mynewbook</em> folder (or use the command line, whatever you prefer). Now open the <em>_toc</em> file. Lines 6-8 currently read:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chapters:
+- file: markdown
+- file: notebooks
+</pre></div>
+</div>
+<p>These two files, <em>markdown</em> and <em>notebooks</em> were simply the names of the files Jupyter Book was using to build the webpages. You want to replace (and append) this with the list of files you have. So for example if you called your files <em>chapter1, chapter2</em> and <em>chapter3</em>, you’ll want to write,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chapters:
+- file: chapter1
+- file: chapter2
+- file: chapter3
+</pre></div>
+</div>
+<p>You’ll also see line 5 currently reads,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>root: intro
+</pre></div>
+</div>
+<p>This will be the landing page for your webpages. You may well not have created this yet, but is a good idea. (You could just go straight to chapter 1, I suppose, but I think it is good practice to have some sort of index page). This can be fairly brief and include any important details around organisation of your course, perhaps a summary overview of the material, etc, and can again be written as a Jupyter Notebook file. Replace <em>intro</em> on this line in <em>_toc</em> with whatever you called your file.</p>
+<p>Now you can delete the files from the template book that are no longer needed (<em>markdown</em>, <em>notebooks</em>,…) - both those in the <em>mynewbook</em> directory and those in the <em>html</em> sub-directory (otherwise things might get confusing).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This potential source of complications in needing to delete files could of course be avoided by starting a new book from scratch. This is perfectly possible and you can read more about it on the Jupyter Book tutorial pages, but I personally find it easiest to do it this way to avoid any silly mistakes in the format of the files.</p>
+</div>
+<p>Now go to the <em>_config</em> file. You will want to change the <em>title</em> and <em>author</em> entries, and perhaps use your own logo image. To ensure all the mathematical content will work, you will also need to add in the following lines at the end of the file,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>parse:
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
+</pre></div>
+</div>
+<p>Now you can build <em>your</em> book. Again, in the command line type,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter-book build mynewbook/
+</pre></div>
+</div>
+<p>and after a few moments it should all run and tell you your HTML files are ready. Once again, go into the <em>_build/html</em> folder and check that everything looks as it should.</p>
+</div>
+<div class="section" id="creating-a-pdf">
+<h2>Creating a PDF<a class="headerlink" href="#creating-a-pdf" title="Permalink to this headline">¶</a></h2>
+<p>As when I talked about generating the single page, you may still want to have PDF copies of notes to use fo handouts, etc. Jupyter Book has a couple of methods for achieveing this, though as the online guidance says, it is still in development. Rather than re-hash it all here I will simply suggest you <a href="https://jupyterbook.org/en/stable/advanced/pdf.html" >click here to go to the guidance pages</a> and follow the instructions there. I will simply add that I have had mixed success with this automated process, but the basic alternative to simply download each page as a PDF and then stick them together in something like Adobe is always available.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Notebooks_HTML.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Producing an HTML file with Jupyter Notebook</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="MyST.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced formatting using MyST Markdown</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Alex Best<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
